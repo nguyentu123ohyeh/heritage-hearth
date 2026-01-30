@@ -60,27 +60,10 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start"
             >
-              {/* Portrait */}
-              <div className="md:col-span-1">
-                <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-soft">
-                  <img
-                    src={willisPortrait}
-                    alt="Willis Merle Johnson"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="mt-4 text-center">
-                  <p className="font-serif text-lg font-semibold text-foreground">
-                    Willis Merle Johnson
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    Founder & Chief Curator
-                  </p>
-                </div>
-              </div>
+
 
               {/* Story Content */}
-              <div className="md:col-span-2 space-y-6">
+              <div className="md:col-span-3 space-y-6">
                 <h2 className="font-serif text-2xl md:text-3xl font-semibold text-foreground">
                   A Lifetime of Culinary Passion
                 </h2>
