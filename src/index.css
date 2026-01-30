@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  MODERN HERITAGE DESIGN SYSTEM
+  Aesthetic: Rustic Florida warmth meets professional kitchen sophistication
+  Palette: Walnut Wood, Copper, Cream White
+*/
+
+@layer base {
+  :root {
+    /* Primary: Walnut Wood - Deep, rich brown */
+    --primary: 25 35% 22%;
+    --primary-foreground: 40 30% 95%;
+
+    /* Background: Warm Cream */
+    --background: 40 30% 97%;
+    --foreground: 25 35% 15%;
+
+    /* Card: Slightly warmer cream */
+    --card: 40 25% 95%;
+    --card-foreground: 25 35% 15%;
+
+    /* Popover */
+    --popover: 40 30% 97%;
+    --popover-foreground: 25 35% 15%;
+
+    /* Secondary: Soft Linen */
+    --secondary: 35 20% 90%;
+    --secondary-foreground: 25 35% 20%;
+
+    /* Muted: Warm Gray */
+    --muted: 30 15% 85%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent: Copper - Warm metallic */
+    --accent: 25 75% 45%;
+    --accent-foreground: 40 30% 98%;
+
+    /* Copper variations for gradients */
+    --copper: 25 75% 45%;
+    --copper-light: 28 70% 55%;
+    --copper-dark: 22 80% 35%;
+
+    /* Walnut variations */
+    --walnut: 25 35% 22%;
+    --walnut-light: 25 30% 35%;
+    --walnut-dark: 25 40% 12%;
+
+    /* Cream variations */
+    --cream: 40 30% 97%;
+    --cream-warm: 35 35% 92%;
+
+    /* Destructive */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 30% 98%;
+
+    /* Border & Input */
+    --border: 30 20% 82%;
+    --input: 30 20% 85%;
+    --ring: 25 75% 45%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 25 35% 20%;
+    --sidebar-primary: 25 35% 22%;
+    --sidebar-primary-foreground: 40 30% 95%;
+    --sidebar-accent: 25 75% 45%;
+    --sidebar-accent-foreground: 40 30% 98%;
+    --sidebar-border: 30 20% 82%;
+    --sidebar-ring: 25 75% 45%;
+
+    /* Custom shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 35% 22% / 0.1);
+    --shadow-lift: 0 12px 40px -8px hsl(25 35% 22% / 0.15);
+    --shadow-copper: 0 8px 30px -6px hsl(25 75% 45% / 0.25);
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 40 25% 92%;
+
+    --card: 25 28% 12%;
+    --card-foreground: 40 25% 92%;
+
+    --popover: 25 28% 10%;
+    --popover-foreground: 40 25% 92%;
+
+    --primary: 40 25% 92%;
+    --primary-foreground: 25 35% 15%;
+
+    --secondary: 25 25% 18%;
+    --secondary-foreground: 40 25% 90%;
+
+    --muted: 25 20% 22%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 28 70% 55%;
+    --accent-foreground: 25 35% 10%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 25% 95%;
+
+    --border: 25 20% 22%;
+    --input: 25 20% 22%;
+    --ring: 28 70% 55%;
+
+    --sidebar-background: 25 28% 10%;
+    --sidebar-foreground: 40 25% 90%;
+    --sidebar-primary: 28 70% 55%;
+    --sidebar-primary-foreground: 25 35% 10%;
+    --sidebar-accent: 25 25% 18%;
+    --sidebar-accent-foreground: 40 25% 90%;
+    --sidebar-border: 25 20% 22%;
+    --sidebar-ring: 28 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-accent text-accent-foreground px-8 py-4 font-medium tracking-wide
+           transition-all duration-300 ease-out
+           hover:shadow-copper hover:-translate-y-0.5;
+  }
+
+  .btn-hero-outline {
+    @apply border-2 border-primary text-primary px-8 py-4 font-medium tracking-wide
+           transition-all duration-300 ease-out bg-transparent
+           hover:bg-primary hover:text-primary-foreground;
+  }
+
+  /* Product Card Lift Effect */
+  .product-card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-300 ease-out
+           shadow-[var(--shadow-soft)];
+  }
+
+  .product-card:hover {
+    @apply shadow-[var(--shadow-lift)] -translate-y-2;
+  }
+
+  /* Collection Card - Note: 'group' class must be added directly in JSX, not via @apply */
+  .collection-card {
+    @apply relative overflow-hidden rounded-xl transition-all duration-500 ease-out
+           cursor-pointer;
+  }
+
+  .collection-card::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-walnut/80 via-walnut/30 to-transparent
+           opacity-60 transition-opacity duration-300;
+  }
+
+  .collection-card:hover::after {
+    @apply opacity-40;
+  }
+
+  /* Copper Gradient Text */
+  .text-copper-gradient {
+    @apply bg-gradient-to-r from-copper via-copper-light to-copper bg-clip-text text-transparent;
+  }
+
+  /* Section Divider */
+  .section-divider {
+    @apply w-24 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto;
+  }
+
+  /* Navigation Link */
+  .nav-link {
+    @apply relative text-foreground/80 transition-colors duration-300 hover:text-accent;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Price Tag */
+  .price-tag {
+    @apply text-accent font-serif text-2xl font-semibold;
+  }
+
+  /* Input Field Styling */
+  .input-heritage {
+    @apply bg-cream-warm border-border focus:border-accent focus:ring-accent/20
+           transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  /* Custom background utilities */
+  .bg-walnut {
+    background-color: hsl(var(--walnut));
+  }
+
+  .bg-copper {
+    background-color: hsl(var(--copper));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-cream-warm {
+    background-color: hsl(var(--cream-warm));
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-heritage {
+    background: linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--cream-warm)) 100%);
+  }
+
+  .bg-gradient-walnut {
+    background: linear-gradient(180deg, hsl(var(--walnut)) 0%, hsl(var(--walnut-dark)) 100%);
+  }
+
+  .bg-gradient-copper {
+    background: linear-gradient(135deg, hsl(var(--copper-dark)) 0%, hsl(var(--copper)) 50%, hsl(var(--copper-light)) 100%);
+  }
+
+  /* Text colors */
+  .text-walnut {
+    color: hsl(var(--walnut));
+  }
+
+  .text-copper {
+    color: hsl(var(--copper));
+  }
+
+  /* Border colors */
+  .border-copper {
+    border-color: hsl(var(--copper));
+  }
+
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Stagger animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
