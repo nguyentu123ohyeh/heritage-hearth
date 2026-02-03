@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-semibold mb-4">
-              Johnson's Kitchen
+              Willis Merle Johnson
             </h3>
             <p className="text-primary-foreground/70 leading-relaxed">
               Curated kitchenware from Pomona Park, Florida. Every piece is selected 
@@ -66,7 +66,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center">
           <p className="text-primary-foreground/50 text-sm">
-            © {new Date().getFullYear()} Johnson's Kitchen. Curated by Willis Merle Johnson.
+            © {new Date().getFullYear()} Willis Merle Johnson. Curated by Willis Merle Johnson.
           </p>
         </div>
       </div>

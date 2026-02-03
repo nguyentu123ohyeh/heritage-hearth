@@ -21,7 +21,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex flex-col">
             <span className="font-serif text-xl md:text-2xl font-semibold text-foreground tracking-wide">
-              Johnson's Kitchen
+              Willis Merle Johnson
             </span>
             <span className="text-xs text-muted-foreground tracking-widest uppercase">
               Pomona Park, Florida

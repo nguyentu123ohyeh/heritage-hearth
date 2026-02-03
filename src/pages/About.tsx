@@ -75,7 +75,7 @@ const About = () => {
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   After decades of collecting and testing kitchenware from around the world, 
-                  I founded Johnson's Kitchen with a simple mission: to share the pieces that 
+                  I founded Willis Merle Johnson with a simple mission: to share the pieces that 
                   have transformed my own cooking journey. Every knife, pan, and board in our 
                   collection has been personally selected for its craftsmanship, durability, 
                   and ability to make cooking more enjoyable.
